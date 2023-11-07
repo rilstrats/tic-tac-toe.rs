@@ -1,21 +1,6 @@
 use std::{fmt, io};
 
 fn main() {
-    run_game()
-}
-
-const WIN_CASES: [(usize, usize, usize); 8] = [
-    (0, 1, 2),
-    (3, 4, 5),
-    (6, 7, 8),
-    (0, 3, 6),
-    (1, 4, 7),
-    (2, 5, 8),
-    (0, 4, 8),
-    (2, 4, 6),
-];
-
-fn run_game() {
     let mut board = Board::new();
     let mut current_player = Player::new();
 
@@ -34,6 +19,17 @@ fn run_game() {
 
     println!("\nCat. No one wins.")
 }
+
+const WIN_CASES: [(usize, usize, usize); 8] = [
+    (0, 1, 2),
+    (3, 4, 5),
+    (6, 7, 8),
+    (0, 3, 6),
+    (1, 4, 7),
+    (2, 5, 8),
+    (0, 4, 8),
+    (2, 4, 6),
+];
 
 #[derive(Debug)]
 enum Player {
